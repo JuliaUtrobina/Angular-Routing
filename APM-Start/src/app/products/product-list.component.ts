@@ -37,10 +37,14 @@ export class ProductListComponent implements OnInit {
     this.productService.getProducts().subscribe({
       next: products => {
         this.products = products;
-        this.filteredProducts = this.performFilter(this.listFilter);
+        this.makeFilteringAfterNgOnInit();
       },
       error: err => this.errorMessage = err
     });
+  }
+
+  makeFilteringAfterNgOnInit(): void {
+    this.filteredProducts = this.performFilter(this.listFilter);
   }
 
   performFilter(filterBy: string): Product[] {
