@@ -1,6 +1,6 @@
 import {ProductListComponent} from './product-list.component';
 import {ComponentFixture, TestBed} from '@angular/core/testing';
-import {DebugElement} from '@angular/core';
+import {DebugElement, NO_ERRORS_SCHEMA} from '@angular/core';
 import {ProductService} from './product.service';
 import {ActivatedRoute} from '@angular/router';
 import {Product} from './product';
@@ -30,6 +30,9 @@ describe('ProductListComponent', () => {
       providers: [
         {provide: ProductService, useValue: mockProductService},
         {provide: ActivatedRoute, useValue: mockActivatedRoute}
+      ],
+      schemas: [
+        NO_ERRORS_SCHEMA
       ]
     });
     fixture = TestBed.createComponent(ProductListComponent);
