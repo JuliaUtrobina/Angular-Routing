@@ -1,6 +1,5 @@
-import {of} from 'rxjs';
-import {ProductListComponent} from '../product-list.component';
-import {Product} from '../product';
+import {ProductListComponent} from './product-list.component';
+import {Product} from './product';
 
 describe('ProductListComponent', () => {
   let component: ProductListComponent;
