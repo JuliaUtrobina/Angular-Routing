@@ -5,6 +5,7 @@ import {ProductService} from './product.service';
 import {ActivatedRoute} from '@angular/router';
 import {Product} from './product';
 import {of} from 'rxjs';
+import {By} from '@angular/platform-browser';
 
 describe('ProductListComponent', () => {
   let mockProductService;
@@ -45,7 +46,9 @@ describe('ProductListComponent', () => {
       fixture.detectChanges();
 
       // Add expectation that name shown in div with attr 'well-title' is right
-      expect(element.querySelector('[well-title]').textContent).toContain('Product 1');
+      // expect(element.querySelector('[well-title]').textContent).toContain('Product 1');
+      // Add exception using debug element
+      expect(debugEl.query(By.css('[well-title]')).nativeElement.textContent).toContain('Product 1');
     });
   });
 });
